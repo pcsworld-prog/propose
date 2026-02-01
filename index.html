@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Piyush ❤️ Aditi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cute Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 25px;
+      padding: 30px;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff4d6d;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #ff6f91;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 22px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.15);
+    }
+
+    .no {
+      background: #eee;
+    }
+
+    #msg {
+      font-family: 'Pacifico', cursive;
+      color: #ff4d6d;
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .hearts span {
+      position: absolute;
+      font-size: 22px;
+      animation: float 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-10vh); }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Aditi ❤️</h1>
+  <h2>From Piyush 🫶</h2>
+
+  <p>
+    Every smile of yours makes my day brighter ✨  
+    Every moment with you feels special 💕  
+    <br><br>
+    Aditi, will you walk with me  
+    through all the little moments of life? 🌸
+  </p>
+
+  <button class="yes" onclick="yesClicked()">Yes 💍🥹</button>
+  <button class="no" onmouseover="moveNo()">Maybe 🤭</button>
+
+  <div id="msg"></div>
+
+  <div class="footer">
+    Designed & Developed by Piyush 🚀
+  </div>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+  function yesClicked() {
+    document.getElementById("msg").innerHTML =
+      "You just made Piyush the happiest 🥹❤️";
+    createHearts();
+  }
+
+  function moveNo() {
+    const btn = document.querySelector(".no");
+    btn.style.position = "absolute";
+    btn.style.left = Math.random() * 80 + "vw";
+    btn.style.top = Math.random() * 80 + "vh";
+  }
+
+  function createHearts() {
+    for (let i = 0; i < 35; i++) {
+      let heart = document.createElement("span");
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.getElementById("hearts").appendChild(heart);
+    }
+  }
+</script>
+
+</body>
+</html>
+
